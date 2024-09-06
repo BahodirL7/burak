@@ -3,8 +3,8 @@
 // Shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
 // MASALAN: getPositive([1, -4, 2]) return qiladi "12"
 
-function getPositive(arr) {
-  const total = arr.filter((num) => num > 0).join("");
+function getPositive(arr: number[]): string {
+  const total = arr.filter((num: number) => num > 0).join("");
   return total;
 }
 
