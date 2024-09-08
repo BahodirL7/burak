@@ -18,6 +18,6 @@ app.set("views engine", "ejs")
 
 // 4-ROUTERS //
 app.use("/admin", routerAdmin); // EJS
-app.use("/", router);      // REACT
+app.use("/", router);          // REACT
 
 export default app; // module.exports = app;

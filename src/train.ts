@@ -4,7 +4,9 @@
 Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
 MASALAN: getDigits("m14i1t") return qiladi "141"
 */
-function getDigits(str: string) {
+
+// case 1
+function getDigits(str: string): string {
   let digits = '';
   for (let s of str) {
     if(!isNaN(Number(s))) {
@@ -15,6 +17,14 @@ function getDigits(str: string) {
 
 const result = getDigits("m14i71t")
 console.log("H2-TASK:", result);
+
+// case 2
+function getDigits2(str: string) {
+  return str.split("").filter(char => !isNaN(Number(char))).join("");
+}
+
+const result2 = getDigits2("m14i71t6")
+console.log("H2-TASK-1:", result2);
 
 // H-TASK:
 
