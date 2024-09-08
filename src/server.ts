@@ -14,8 +14,8 @@ MySQL == CLUSTER => DATABASE => TABLE => DATA = RELATIONAL DATABASE;
 
 import dotenv from 'dotenv';
 dotenv.config();
-console.log(dotenv.config());
-console.log("PORT:", process.env.PORT);
+// console.log(dotenv.config());
+// console.log("PORT:", process.env.PORT);
 
 import mongoose from 'mongoose';
 import app from "./app"
