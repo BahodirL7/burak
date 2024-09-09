@@ -9,7 +9,7 @@
     "train": "nodemon --exec ts-node src/train.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  }, 
   "author": "MIT",
   "license": "ISC",
   "dependencies": {
