@@ -1,3 +1,26 @@
+// I-TASK:
+
+// Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
+// MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4
+
+function majorityElement(arr: number[]): number {
+  const count: { [key: number]: number } = {};
+  for (let num of arr) {
+      count[num] = (count[num] || 0) + 1;
+  }
+  let maxCount = 0;
+  let majorityElement = arr[0];
+
+  for (let num in count) {
+      if (count[num] > maxCount) {
+          maxCount = count[num];
+          majorityElement = Number(num);
+      }
+  } return majorityElement;
+}
+const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4]);
+console.log("I-TASK:", result);
+
 // H2-TASK: 
 
 /*
@@ -5,26 +28,26 @@ Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrume
 MASALAN: getDigits("m14i1t") return qiladi "141"
 */
 
-// case 1
-function getDigits(str: string): string {
-  let digits = '';
-  for (let s of str) {
-    if(!isNaN(Number(s))) {
-      digits += s;
-    }
-  } return digits;
-}
+// // case 1
+// function getDigits(str: string): string {
+//   let digits = '';
+//   for (let s of str) {
+//     if(!isNaN(Number(s))) {
+//       digits += s;
+//     }
+//   } return digits;
+// }
 
-const result = getDigits("m14i71t")
-console.log("H2-TASK:", result);
+// const result = getDigits("m14i71t")
+// console.log("H2-TASK:", result);
 
-// case 2
-function getDigits2(str: string) {
-  return str.split("").filter(char => !isNaN(Number(char))).join("");
-}
+// // case 2
+// function getDigits2(str: string) {
+//   return str.split("").filter(char => !isNaN(Number(char))).join("");
+// }
 
-const result2 = getDigits2("m14i71t6")
-console.log("H2-TASK-1:", result2);
+// const result2 = getDigits2("m14i71t6")
+// console.log("H2-TASK-1:", result2);
 
 // H-TASK:
 
