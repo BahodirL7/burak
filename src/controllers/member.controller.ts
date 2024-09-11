@@ -5,8 +5,9 @@ import { T } from "../libs/types/common"
 const memberController: T = {};
 memberController.goHome = (req: Request, res: Response) => {
     try {
-    res.send("Home Page");
+        console.log("goHome");
         
+        res.send("Home Page");
     } catch (error) {
         console.log("Error, goHome", error);
     }
@@ -14,7 +15,8 @@ memberController.goHome = (req: Request, res: Response) => {
 
 memberController.getLogin = (req: Request, res: Response) => {
     try {
-    res.send("Login Page");  
+        console.log("getLogin");
+        res.send("Login Page");  
     } catch (error) {
         console.log("Error, getLogin", error);
     }
@@ -22,7 +24,8 @@ memberController.getLogin = (req: Request, res: Response) => {
 
 memberController.getSignup = (req: Request, res: Response) => {
     try {
-    res.send("Signup Page");
+        console.log("getSignup");
+        res.send("Signup Page");
     } catch (error) {
         console.log("Error, getSignup", error);
     }

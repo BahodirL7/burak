@@ -1,11 +1,21 @@
 import express from "express";
-const router = express.Router();
+const routerAdmin = express.Router();
 import restaurantController from "./controllers/restaurant.controller";
 
-router.get("/", restaurantController.goHome);
+routerAdmin.get("/", restaurantController.goHome);
 
-router.get("/login", restaurantController.getLogin)
+routerAdmin
+.get("/login", restaurantController.getLogin)
+.post("/login", restaurantController.processLogin);
 
-router.get("/signup", restaurantController.getSignup)
+routerAdmin.post("/login/process", restaurantController.processLogin)
 
-export default router;
+routerAdmin
+.get("/signup", restaurantController.getSignup)
+.post("/signup", restaurantController.processSignup);
+
+export default routerAdmin;
+
+function post(arg0: string, processLogin: any) {
+    throw new Error("Function not implemented.");
+}
