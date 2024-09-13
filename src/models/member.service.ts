@@ -11,7 +11,7 @@ class MemberService {
         this.memberModel = MemberModel;
     }
 
-    public async processSignup(input: MemberInput) {
+    public async processSignup(input: MemberInput): Promise<Member> {
         const exist = await this.memberModel
             .findOne({memberType: MemberType.RESTAURANT})
             .exec();
@@ -25,7 +25,7 @@ class MemberService {
         console.log("after", input.memberPassword);
 
         try {
-            const result = await this.memberModel.create(input);
+            const result: any = await this.memberModel.create(input);
             result.memberPassword = "";
     
             return result;
@@ -36,7 +36,7 @@ class MemberService {
     }
     
     public async processLogin(input: LoginInput) {
-        const member = await this.memberModel
+        const member: any = await this.memberModel
             .findOne(
                 { memberNick: input.memberNick }, 
                 { memberNick: 1, memberPassword: 1 }
