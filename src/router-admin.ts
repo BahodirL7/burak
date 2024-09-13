@@ -12,8 +12,7 @@ routerAdmin
 .get("/signup", restaurantController.getSignup)
 .post("/signup", restaurantController.processSignup);
 
-export default routerAdmin;
+// Product
+// User
 
-function post(arg0: string, processLogin: any) {
-    throw new Error("Function not implemented.");
-}
+export default routerAdmin;
