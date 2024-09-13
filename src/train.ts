@@ -1,25 +1,59 @@
+// J-TASK:
+
+// Shunday function yozing, u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
+// MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
+
+// case 1 
+let findLongestWord1 = (str: string) => {
+    let longestWord = "";
+    const arr = str.split(" ");
+
+    for (let i of arr) {
+        if (i.length > longestWord.length) {
+            longestWord = i;
+        }
+    } return longestWord
+}
+
+const result1 = findLongestWord1("I came from Uzbekistan");
+console.log("J-TASK-1:", result1);
+
+// case 2
+let findLongestWord2 = (str: string) => {
+
+   const words = str.split(" ");
+
+   const lengthes = words.map(word => word.length);
+
+   const maxIndex = lengthes.indexOf(Math.max(...lengthes));
+
+   return words[maxIndex];
+}
+
+const result2 = findLongestWord2("I came from Germany");
+console.log("J-TASK-2:", result2);
 // I-TASK:
 
 // Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
 // MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4
 
-function majorityElement(arr: number[]): number {
-  const count: { [key: number]: number } = {};
-  for (let num of arr) {
-      count[num] = (count[num] || 0) + 1;
-  }
-  let maxCount = 0;
-  let majorityElement = arr[0];
+// function majorityElement(arr: number[]): number {
+//   const count: { [key: number]: number } = {};
+//   for (let num of arr) {
+//       count[num] = (count[num] || 0) + 1;
+//   }
+//   let maxCount = 0;
+//   let majorityElement = arr[0];
 
-  for (let num in count) {
-      if (count[num] > maxCount) {
-          maxCount = count[num];
-          majorityElement = Number(num);
-      }
-  } return majorityElement;
-}
-const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4]);
-console.log("I-TASK:", result);
+//   for (let num in count) {
+//       if (count[num] > maxCount) {
+//           maxCount = count[num];
+//           majorityElement = Number(num);
+//       }
+//   } return majorityElement;
+// }
+// const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4]);
+// console.log("I-TASK:", result);
 
 // H2-TASK: 
 
