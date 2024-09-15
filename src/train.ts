@@ -27,11 +27,12 @@ let findLongestWord2 = (str: string) => {
 
    const maxIndex = lengthes.indexOf(Math.max(...lengthes));
 
-   return words[maxIndex];
+   return words[maxIndex]; 
 }
 
 const result2 = findLongestWord2("I came from Germany");
 console.log("J-TASK-2:", result2);
+
 // I-TASK:
 
 // Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.

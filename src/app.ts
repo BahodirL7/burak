@@ -13,8 +13,10 @@ app.use(express.json());
 app.use(morgan(MORGAN_FORMAT));
 
 // 2-SESSIONS //
+    // Authentication
+    // Authorization
 
-// 3-VIEWS //
+// 3-VIEWS // 
 app.set("views", path.join(__dirname, "views"))
 app.set("views engine", "ejs")
 

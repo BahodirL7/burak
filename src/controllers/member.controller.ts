@@ -1,34 +1,43 @@
 import { Request, Response } from "express";
-
 import { T } from "../libs/types/common"
+import MemberService from "../models/member.service";
+import { LoginInput, Member, MemberInput } from "../libs/types/member";
+import Errors from "../libs/Errors";
+
+const memberService = new MemberService();
 
 const memberController: T = {};
-memberController.goHome = (req: Request, res: Response) => {
-    try {
-        console.log("goHome");
-        
-        res.send("Home Page");
-    } catch (error) {
-        console.log("Error, goHome", error);
-    }
-}
 
-memberController.getLogin = (req: Request, res: Response) => {
+memberController.signup = async (req: Request, res: Response) => {
     try {
-        console.log("getLogin");
-        res.send("Login Page");  
-    } catch (error) {
-        console.log("Error, getLogin", error);
-    }
-}
+        console.log('signup');
 
-memberController.getSignup = (req: Request, res: Response) => {
-    try {
-        console.log("getSignup");
-        res.send("Signup Page");
+        const input: MemberInput = req.body,
+            result: Member = await memberService.signup(input);
+        // TODO: TOKENS AUTHENTICATION
+
+        res.json( {member: result} );
     } catch (error) {
-        console.log("Error, getSignup", error);
+        console.log("Error, signup", error);
+        if (error instanceof Errors) res.status(error.code).json(error);
+        else res.status(Errors.standart.code).json(Errors.standart);
     }
 };
 
-export default memberController
+memberController.login = async (req: Request, res: Response) => {
+    try {
+        console.log('login');
+
+        const input: LoginInput = req.body,
+            result = await memberService.login (input);
+        // TODO: TOKENS AUTHENTICATION
+        
+        res.json( {member: result} );
+    } catch (error) {
+        console.log("Error, login", error);
+        if (error instanceof Errors) res.status(error.code).json(error);
+        else res.status(Errors.standart.code).json(Errors.standart);
+    }
+};
+
+export default memberController;
