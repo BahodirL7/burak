@@ -46,15 +46,16 @@ class MemberService {
 
         if(!isMatch) 
             throw new Errors(HttpCode.UNAUTHORZED, Message.WRONG_PASSWORD);
+        console.log(member);
 
-        return await this.memberModel.findById(member._id).lean().exec();
+        return await this.memberModel.findById(member._id).lean().exec();        
     }
 
     /** SSR */
 
     public async processSignup(input: MemberInput): Promise<Member> {
         const exist = await this.memberModel
-            .findOne({memberType: MemberType.RESTAURANT})
+            .findOne( {memberType: MemberType.RESTAURANT} )
             .exec();
         console.log("exist", exist);
         
