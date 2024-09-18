@@ -1,37 +1,69 @@
+// K-TASK: 
+
+// Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
+// MASALAN: countVowels("string") return 1;
+
+// case 1
+function countVowels1(str: string) {
+    let vowelsCcount = 0;
+    // console.log(str.length);
+    
+    const array = str.split("");
+    // console.log(array.length);
+    
+    for (let i = 0; i <= array.length; i++) {
+        if (str.charAt(i) == "a" || str.charAt(i) == "e" || str.charAt(i) == "i" || str.charAt(i) == "o" || str.charAt(i) == "u") {
+            vowelsCcount += 1
+        }
+    } return vowelsCcount;
+}
+
+const result1 = countVowels1("striiing");
+console.log("K-TASK:", result1);
+
+// case 2
+function countVowels2(str: string) {
+    const array = str.split("");
+    return array.filter(letter => "aeiou".includes(letter)).length;
+}
+
+const result2 = countVowels2("string");
+console.log("K-TASK:", result2);
+
 // J-TASK:
 
 // Shunday function yozing, u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
 // MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
 
 // case 1 
-let findLongestWord1 = (str: string) => {
-    let longestWord = "";
-    const arr = str.split(" ");
+// let findLongestWord1 = (str: string) => {
+//     let longestWord = "";
+//     const arr = str.split(" ");
 
-    for (let i of arr) {
-        if (i.length > longestWord.length) {
-            longestWord = i;
-        }
-    } return longestWord
-}
+//     for (let i of arr) {
+//         if (i.length > longestWord.length) {
+//             longestWord = i;
+//         }
+//     } return longestWord
+// }
 
-const result1 = findLongestWord1("I came from Uzbekistan");
-console.log("J-TASK-1:", result1);
+// const result1 = findLongestWord1("I came from Uzbekistan");
+// console.log("J-TASK-1:", result1);
 
 // case 2
-let findLongestWord2 = (str: string) => {
+// let findLongestWord2 = (str: string) => {
 
-   const words = str.split(" ");
+//    const words = str.split(" ");
 
-   const lengthes = words.map(word => word.length);
+//    const lengthes = words.map(word => word.length);
 
-   const maxIndex = lengthes.indexOf(Math.max(...lengthes));
+//    const maxIndex = lengthes.indexOf(Math.max(...lengthes));
 
-   return words[maxIndex]; 
-}
+//    return words[maxIndex]; 
+// }
 
-const result2 = findLongestWord2("I came from Germany");
-console.log("J-TASK-2:", result2);
+// const result2 = findLongestWord2("I came from Germany");
+// console.log("J-TASK-2:", result2);
 
 // I-TASK:
 
