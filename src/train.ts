@@ -1,34 +1,50 @@
+// L-TASK: 
+
+// Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
+// MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";
+
+function reverseSentence(str: string) {
+    const words = str.split(" ");
+    // console.log(words);
+    const reversedWords = words.map(word => word.split("").reverse().join(''));
+    // console.log(reversedWords);
+    return reversedWords.join(' ');
+}
+
+const result = reverseSentence("we like coding!");
+console.log("L-TASK", result);
+
 // K-TASK: 
 
 // Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
 // MASALAN: countVowels("string") return 1;
 
 // case 1
-function countVowels1(str: string) {
-    let vowelsCcount = 0;
+// function countVowels1(str: string) {
+//     let vowelsCcount = 0;
     // console.log(str.length);
     
-    const array = str.split("");
+//     const array = str.split("");
     // console.log(array.length);
     
-    for (let i = 0; i <= array.length; i++) {
-        if (str.charAt(i) == "a" || str.charAt(i) == "e" || str.charAt(i) == "i" || str.charAt(i) == "o" || str.charAt(i) == "u") {
-            vowelsCcount += 1
-        }
-    } return vowelsCcount;
-}
+//     for (let i = 0; i <= array.length; i++) {
+//         if (str.charAt(i) == "a" || str.charAt(i) == "e" || str.charAt(i) == "i" || str.charAt(i) == "o" || str.charAt(i) == "u") {
+//             vowelsCcount += 1
+//         }
+//     } return vowelsCcount;
+// }
 
-const result1 = countVowels1("striiing");
-console.log("K-TASK:", result1);
+// const result1 = countVowels1("striiing");
+// console.log("K-TASK:", result1);
 
-// case 2
-function countVowels2(str: string) {
-    const array = str.split("");
-    return array.filter(letter => "aeiou".includes(letter)).length;
-}
+// // case 2
+// function countVowels2(str: string) {
+//     const array = str.split("");
+//     return array.filter(letter => "aeiou".includes(letter)).length;
+// }
 
-const result2 = countVowels2("string");
-console.log("K-TASK:", result2);
+// const result2 = countVowels2("string");
+// console.log("K-TASK:", result2);
 
 // J-TASK:
 
