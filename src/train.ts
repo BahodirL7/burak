@@ -1,18 +1,60 @@
+// M-TASK:
+
+// Shunday function yozing, u raqamlardan tashkil topgan array qabul qilsin va array ichidagi har bir raqam uchun raqamni ozi va hamda osha raqamni kvadratidan tashkil topgan object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
+// MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}];
+
+// case 1
+function getSquareNumbers1(numbers: number[]): any[] {
+    return numbers.map((num: number) => ({number: num, square: num * num}));
+
+};
+
+const result1 = getSquareNumbers1([1, 2, 3]);
+console.log("M-TASK1", result1);
+
+// case 2
+function getSquareNumbers2(numbers: number[]) {
+    return numbers.reduce((acc, num) => {
+        acc.push({
+            number: num,
+            square: num * num
+        });
+        return acc
+    }, [] as { number: number, square: number }[]);
+};
+
+const result2 = getSquareNumbers2([4, 5, 6]);
+console.log("M-TASK2", result2);
+
+// case 3
+function getSquareNumbers3(numbers: number[]) {
+    const result: any[] = [];
+    for (let num of numbers) {
+        result.push({
+            number: num,
+            square: num * num
+        })
+    } return result;
+}
+
+const result3 = getSquareNumbers3([7, 8, 9]);
+console.log("M-TASK3", result3);
+
 // L-TASK: 
 
 // Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
 // MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";
 
-function reverseSentence(str: string) {
-    const words = str.split(" ");
-    // console.log(words);
-    const reversedWords = words.map(word => word.split("").reverse().join(''));
-    // console.log(reversedWords);
-    return reversedWords.join(' ');
-}
+// function reverseSentence(str: string) {
+//     const words = str.split(" ");
+//     // console.log(words);
+//     const reversedWords = words.map(word => word.split("").reverse().join(''));
+//     // console.log(reversedWords);
+//     return reversedWords.join(' ');
+// }
 
-const result = reverseSentence("we like coding!");
-console.log("L-TASK", result);
+// const result = reverseSentence("we like coding!");
+// console.log("L-TASK", result);
 
 // K-TASK: 
 
