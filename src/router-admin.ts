@@ -33,7 +33,8 @@ routerAdmin.post(
 );
 
 routerAdmin.post(
-    "/product/:id", 
+    "/product/:id",
+    restaurantController.verifyRestaurant,
     productController.updateChosenProduct
 );
 
