@@ -47,8 +47,7 @@ restaurantController.processSignup = async (req: AdminRequest, res: Response) =>
         const file = req.file;
         if (!file)
             throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG);
-        // console.log("file:", file);
-        // throw new Error("Forced Quit");
+        console.log("file:", file);
 
         const newMember: MemberInput = req.body;
         newMember.memberImage = file?.path; 
@@ -99,6 +98,32 @@ restaurantController.logout = async (req: AdminRequest, res: Response) => {
     }
 }
 
+// GetUsers
+restaurantController.getUsers = async (req: AdminRequest, res: Response) => {
+    try {
+        console.log('getUsers');
+        const result = await memberService.getUsers();
+        res.render("users", { users: result });
+        console.log("result:", result);
+        
+     
+    } catch (error) {
+        console.log("Error, getUsers", error);
+        res.redirect("/admin/login")
+    }
+}
+
+// UpdateChosenUsers
+restaurantController.updateChosenUsers = async (req: AdminRequest, res: Response) => {
+    try {
+        console.log('updateChosenUsers');
+    
+    } catch (error) {
+        console.log("Error, updateChosenUsers", error);
+        res.redirect("/admin/l")
+    }
+}
+
 // checkAuth
 restaurantController.checkAuthSession = async (req: AdminRequest, res: Response) => {
     try {
@@ -122,5 +147,7 @@ restaurantController.verifyRestaurant = (req: AdminRequest, res: Response, next:
         res.send(`<script>alert('${message}'); window.location.replace('/admin/login'); </script>`);
     }
 }
+
+
 
 export default restaurantController;
