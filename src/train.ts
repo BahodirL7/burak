@@ -1,44 +1,58 @@
+// N-TASK: 
+
+// Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
+// MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
+
+function palindromCheck(str: string) {
+    const palindrom = str.split('').reverse().join('');
+    console.log(palindrom);
+    return palindrom === str ? true : false;
+}
+
+const result = palindromCheck('dad');
+console.log("N-TASK:", result);
+
 // M-TASK:
 
 // Shunday function yozing, u raqamlardan tashkil topgan array qabul qilsin va array ichidagi har bir raqam uchun raqamni ozi va hamda osha raqamni kvadratidan tashkil topgan object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
 // MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}];
 
 // case 1
-function getSquareNumbers1(numbers: number[]): any[] {
-    return numbers.map((num: number) => ({number: num, square: num * num}));
+// function getSquareNumbers1(numbers: number[]): any[] {
+//     return numbers.map((num: number) => ({number: num, square: num * num}));
 
-};
+// };
 
-const result1 = getSquareNumbers1([1, 2, 3]);
-console.log("M-TASK1", result1);
+// const result1 = getSquareNumbers1([1, 2, 3]);
+// console.log("M-TASK1", result1);
 
-// case 2
-function getSquareNumbers2(numbers: number[]) {
-    return numbers.reduce((acc, num) => {
-        acc.push({
-            number: num,
-            square: num * num
-        });
-        return acc
-    }, [] as { number: number, square: number }[]);
-};
+// // case 2
+// function getSquareNumbers2(numbers: number[]) {
+//     return numbers.reduce((acc, num) => {
+//         acc.push({
+//             number: num,
+//             square: num * num
+//         });
+//         return acc
+//     }, [] as { number: number, square: number }[]);
+// };
 
-const result2 = getSquareNumbers2([4, 5, 6]);
-console.log("M-TASK2", result2);
+// const result2 = getSquareNumbers2([4, 5, 6]);
+// console.log("M-TASK2", result2);
 
-// case 3
-function getSquareNumbers3(numbers: number[]) {
-    const result: any[] = [];
-    for (let num of numbers) {
-        result.push({
-            number: num,
-            square: num * num
-        })
-    } return result;
-}
+// // case 3
+// function getSquareNumbers3(numbers: number[]) {
+//     const result: any[] = [];
+//     for (let num of numbers) {
+//         result.push({
+//             number: num,
+//             square: num * num
+//         })
+//     } return result;
+// }
 
-const result3 = getSquareNumbers3([7, 8, 9]);
-console.log("M-TASK3", result3);
+// const result3 = getSquareNumbers3([7, 8, 9]);
+// console.log("M-TASK3", result3);
 
 // L-TASK: 
 
