@@ -4,7 +4,7 @@
 // MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45
 
 function calculateSumOfNumbers(numbers: any[]) {
-    // return numbers.filter(num => typeof num === "number" ? num + num : NaN);
+
     let array = 0;
     for (let num of numbers) {
         if (typeof num === "number") {
