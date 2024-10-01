@@ -11,6 +11,7 @@ $(function () {
       $("#product-collection").show();
     }
   });
+
   $("#process-btn").on("click", () => {
     $(".dish-container").slideToggle(500);
     $("#process-btn").css("display", "none");
@@ -33,6 +34,7 @@ $(".new-product-status").on("change", async function (e) {
     });
     console.log("response:", response);
     const result = response.data;
+    console.log(result);
     if (result.data) {
       console.log("Product updated!");
       $(".new-product-status").blur();
@@ -66,9 +68,11 @@ function validateSignupForm() {
 
 function previewFileHandler(input, order) {
   const imgClassName = input.className;
+  console.log("imgClassName", imgClassName);
   console.log("input:", input);
 
   const file = $(`.${imgClassName}`).get(0).files[0];
+  console.log("file:", file);
 
   const fileType = file["type"];
   const validImageType = ["image/jpg", "image/jpeg", "image/png"];
