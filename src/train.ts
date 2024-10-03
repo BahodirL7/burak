@@ -1,20 +1,36 @@
+// Q-TASK:
+
+// Shunday function yozing, u 2 ta parametrgga ega bolib birinchisi object, ikkinchisi string. Agar string parametr objectni propertysi bolsa true bolmasa false qaytarsin.
+// MASALAN: hasProperty({name: "BMW", model: "M3"}, "model") return true; hasProperty({name: "BMW", model: "M3"}, "year") return false
+
+function hasProperty(obj:any, str:any) {
+    const array = Object.entries(obj).join(',').split(" ");
+    console.log(array);
+    return array.map(value => value.includes(str));
+
+}
+
+const result = hasProperty({name: "BMW", model: "M3"}, "M3");
+console.log("Q-TASK:", result)
+
+
 // P-TASK:
 
 // Shunday function yozing, u object qabul qilsin va arrayni object arrayga otkazib arrayni qaytarsin qaytarsin.
 // MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 
-function objectToArray(obj: object):any[] {
-    // case 1
-    // return Object.entries(obj);
+// function objectToArray(obj: object):any[] {
+//     // case 1
+//     // return Object.entries(obj);
 
-    // case 2
-    let arr = Array.from(Object.entries(obj), ([key, value]) => [key, value]);
-    return arr;
+//     // case 2
+//     let arr = Array.from(Object.entries(obj), ([key, value]) => [key, value]);
+//     return arr;
 
-};
+// };
 
-const result = objectToArray({a: 10, b: 20});
-console.log("P-TASK:", result);
+// const result = objectToArray({a: 10, b: 20});
+// console.log("P-TASK:", result);
 
 
 // O-TASK:
