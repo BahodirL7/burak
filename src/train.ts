@@ -3,38 +3,41 @@
 // Shunday function yozing, u string parametrga ega bolsin. String "1+2" holatda pass qilinganda string ichidagi sonlar yigindisini number holatda qaytarsin.
 // MASALAN: calculate("1+3") return 4;
 
-let calculate = (str:any):any => {
+let calculate = (str: any): any => {
+  // case 1
+  //   let re = 0;
 
-    // case 1
-    let re = 0;
+  // let array = str.split("");
+  // for (let ele of array) {
+  //     if(!isNaN(Number(ele))) {
+  //         re+=Number(ele);
+  //     }
+  // }
+  // return re;
 
-    let array = str.split("");
-    for (let ele of array) {
-        if(!isNaN(Number(ele))) {
-            re+=Number(ele);
-        }
-    } 
-    return re;
+  // case 2
+  //   let ra = 0;
 
-    // case 2
-    let ra = 0;
+  // const digits = str.split("").filter((char: any) => {
+  //     if(!isNaN(Number(char))) {
+  //      ra+=Number((char))
+  //     }
+  // });
+  // return ra;
 
-    // const digits = str.split("").filter((char: any) => {
-    //     if(!isNaN(Number(char))) {
-    //      ra+=Number((char))
-    //     } 
-    // });
-    // return ra;
+  // case 3
+  //   let ro = 0;
 
-    // case 3
-    let ro = 0;
+  // const digit = str.split("").filter((char: any) => !isNaN(Number(char)));
+  // for (let i = 0; i < digit.length; i++) {
+  //     if (typeof Number(digit[i]) === "number") {
+  //         ro += Number(digit[i]);
+  //     }
+  // } return ro;
 
-    // const digit = str.split("").filter((char: any) => !isNaN(Number(char)));
-    // for (let i = 0; i < digit.length; i++) {
-    //     if (typeof Number(digit[i]) === "number") {
-    //         ro += Number(digit[i]);
-    //     }
-    // } return ro;
+  // case 4
+  const digits = str.split("+").map(Number);
+  return digits.reduce((sum: any, val: any) => (sum += val));
 };
 
 const result = calculate("1+3");
@@ -56,10 +59,8 @@ console.log("R-TASK:", result);
 // }
 // console.log(hasProperty1({name: "BMW", model: "M3"}, "M3"));
 
-
 // const result = hasProperty({name: "BMW", model: "M3"}, "M3");
 // console.log("Q-TASK:", result)
-
 
 // P-TASK:
 
@@ -67,10 +68,10 @@ console.log("R-TASK:", result);
 // MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 
 // function objectToArray(obj: object):any[] {
-    // case 1
-    // return Object.entries(obj);
+// case 1
+// return Object.entries(obj);
 
-    // case 2
+// case 2
 //     let arr = Array.from(Object.entries(obj), ([key, value]) => [key, value]);
 //     return arr;
 
@@ -78,7 +79,6 @@ console.log("R-TASK:", result);
 
 // const result = objectToArray({a: 10, b: 20});
 // console.log("P-TASK:", result);
-
 
 // O-TASK:
 
@@ -154,7 +154,7 @@ console.log("R-TASK:", result);
 // const result3 = getSquareNumbers3([7, 8, 9]);
 // console.log("M-TASK3", result3);
 
-// L-TASK: 
+// L-TASK:
 
 // Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
 // MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";
@@ -170,7 +170,7 @@ console.log("R-TASK:", result);
 // const result = reverseSentence("we like coding!");
 // console.log("L-TASK", result);
 
-// K-TASK: 
+// K-TASK:
 
 // Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
 // MASALAN: countVowels("string") return 1;
@@ -178,11 +178,11 @@ console.log("R-TASK:", result);
 // case 1
 // function countVowels1(str: string) {
 //     let vowelsCcount = 0;
-    // console.log(str.length);
-    
+// console.log(str.length);
+
 //     const array = str.split("");
-    // console.log(array.length);
-    
+// console.log(array.length);
+
 //     for (let i = 0; i <= array.length; i++) {
 //         if (str.charAt(i) == "a" || str.charAt(i) == "e" || str.charAt(i) == "i" || str.charAt(i) == "o" || str.charAt(i) == "u") {
 //             vowelsCcount += 1
@@ -207,7 +207,7 @@ console.log("R-TASK:", result);
 // Shunday function yozing, u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
 // MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
 
-// case 1 
+// case 1
 // let findLongestWord1 = (str: string) => {
 //     let longestWord = "";
 //     const arr = str.split(" ");
@@ -231,7 +231,7 @@ console.log("R-TASK:", result);
 
 //    const maxIndex = lengthes.indexOf(Math.max(...lengthes));
 
-//    return words[maxIndex]; 
+//    return words[maxIndex];
 // }
 
 // const result2 = findLongestWord2("I came from Germany");
@@ -260,7 +260,7 @@ console.log("R-TASK:", result);
 // const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4]);
 // console.log("I-TASK:", result);
 
-// H2-TASK: 
+// H2-TASK:
 
 /*
 Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
