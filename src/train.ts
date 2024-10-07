@@ -1,47 +1,67 @@
+// S-TASK:
+
+// Shunday function yozing, u numberlardan tashkil topgan array qabul qilsin va o'sha numberlar orasidagi tushib qolgan sonni topib uni return qilsin
+// MASALAN: missingNumber([3, 0, 1]) return 2
+
+function missingNumber(a: any) {
+  let missing: any[] = [];
+
+  let index = a.length;
+  for (let i = 1; i <= index; i++) {
+    if (a.indexOf(i) == -1) {
+      missing.push(i);
+    }
+  }
+  return missing;
+}
+
+const result = missingNumber([3, 0, 1]);
+console.log("S-TASK:", result);
+
 // R-TASK:
 
 // Shunday function yozing, u string parametrga ega bolsin. String "1+2" holatda pass qilinganda string ichidagi sonlar yigindisini number holatda qaytarsin.
 // MASALAN: calculate("1+3") return 4;
 
-let calculate = (str: any): any => {
-  // case 1
-  //   let re = 0;
+// let calculate = (str: any): any => {
+// case 1
+//   let re = 0;
 
-  // let array = str.split("");
-  // for (let ele of array) {
-  //     if(!isNaN(Number(ele))) {
-  //         re+=Number(ele);
-  //     }
-  // }
-  // return re;
+// let array = str.split("");
+// for (let ele of array) {
+//     if(!isNaN(Number(ele))) {
+//         re+=Number(ele);
+//     }
+// }
+// return re;
 
-  // case 2
-  //   let ra = 0;
+// case 2
+//   let ra = 0;
 
-  // const digits = str.split("").filter((char: any) => {
-  //     if(!isNaN(Number(char))) {
-  //      ra+=Number((char))
-  //     }
-  // });
-  // return ra;
+// const digits = str.split("").filter((char: any) => {
+//     if(!isNaN(Number(char))) {
+//      ra+=Number((char))
+//     }
+// });
+// return ra;
 
-  // case 3
-  //   let ro = 0;
+// case 3
+//   let ro = 0;
 
-  // const digit = str.split("").filter((char: any) => !isNaN(Number(char)));
-  // for (let i = 0; i < digit.length; i++) {
-  //     if (typeof Number(digit[i]) === "number") {
-  //         ro += Number(digit[i]);
-  //     }
-  // } return ro;
+// const digit = str.split("").filter((char: any) => !isNaN(Number(char)));
+// for (let i = 0; i < digit.length; i++) {
+//     if (typeof Number(digit[i]) === "number") {
+//         ro += Number(digit[i]);
+//     }
+// } return ro;
 
-  // case 4
-  const digits = str.split("+").map(Number);
-  return digits.reduce((sum: any, val: any) => (sum += val));
-};
+// case 4
+//   const digits = str.split("+").map(Number);
+//   return digits.reduce((sum: any, val: any) => (sum += val));
+// };
 
-const result = calculate("1+3");
-console.log("R-TASK:", result);
+// const result = calculate("1+3");
+// console.log("R-TASK:", result);
 
 // Q-TASK:
 
@@ -267,7 +287,7 @@ Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrume
 MASALAN: getDigits("m14i1t") return qiladi "141"
 */
 
-// // case 1
+// case 1
 // function getDigits(str: string): string {
 //   let digits = '';
 //   for (let s of str) {
@@ -280,7 +300,7 @@ MASALAN: getDigits("m14i1t") return qiladi "141"
 // const result = getDigits("m14i71t")
 // console.log("H2-TASK:", result);
 
-// // case 2
+// case 2
 // function getDigits2(str: string) {
 //   return str.split("").filter(char => !isNaN(Number(char))).join("");
 // }
